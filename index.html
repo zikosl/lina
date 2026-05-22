@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>For Lina 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff7eb6;
+      --rose: #ff4d88;
+      --hot: #ff2f7e;
+      --lavender: #9b7bff;
+      --cream: #fff7ea;
+      --gold: #fff1a8;
+      --green: #4fb477;
+      --dark: #1d1028;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      min-height: 100%;
+      background: #1d1028;
+    }
+
+    body {
+      min-height: 100svh;
+      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.75) 0 5%, transparent 7%),
+        radial-gradient(circle at 78% 12%, rgba(255, 126, 182, 0.55) 0 12%, transparent 22%),
+        radial-gradient(circle at 48% 92%, rgba(155, 123, 255, 0.35) 0 18%, transparent 32%),
+        linear-gradient(145deg, #160a22 0%, #3b1551 42%, #ff79ae 100%);
+    }
+
+    .sky {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .aurora {
+      position: absolute;
+      inset: -35%;
+      background:
+        radial-gradient(circle at 25% 50%, rgba(255, 126, 182, 0.42), transparent 27%),
+        radial-gradient(circle at 75% 35%, rgba(155, 123, 255, 0.36), transparent 30%),
+        radial-gradient(circle at 50% 76%, rgba(255, 245, 180, 0.22), transparent 24%);
+      filter: blur(34px);
+      animation: auroraMove 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes auroraMove {
+      from { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1); }
+      to { transform: translate3d(5%, 3%, 0) rotate(12deg) scale(1.08); }
+    }
+
+    .stars span,
+    .petals span,
+    .butterflies span {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+    }
+
+    .stars span {
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 12px white;
+      opacity: 0.8;
+      animation: twinkle 2.7s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { transform: scale(0.55); opacity: 0.32; }
+      50% { transform: scale(1.55); opacity: 1; }
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: max(18px, env(safe-area-inset-top)) 14px max(18px, env(safe-area-inset-bottom));
+      z-index: 5;
+    }
+
+    .card {
+      width: min(100%, 430px);
+      min-height: calc(100svh - 36px);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px 18px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 34px;
+      background: linear-gradient(155deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+      box-shadow: 0 24px 70px rgba(25, 8, 42, 0.5), inset 0 0 34px rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(22px);
+      overflow: hidden;
+      animation: cardIn 1s cubic-bezier(.2,.9,.2,1) both;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 67%);
+      top: -110px;
+      right: -105px;
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+
+    .card::after {
+      content: "Lina";
+      position: absolute;
+      right: -18px;
+      bottom: 76px;
+      font-family: "Pacifico", cursive;
+      font-size: 96px;
+      opacity: .07;
+      transform: rotate(-16deg);
+      pointer-events: none;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(28px) scale(.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(.9); opacity: .45; }
+      50% { transform: scale(1.12); opacity: .85; }
+    }
+
+    .message {
+      position: relative;
+      z-index: 2;
+      padding-top: 4px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      max-width: 100%;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.17);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 800;
+      animation: floatSoft 4s ease-in-out infinite;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-family: "Pacifico", cursive;
+      font-size: clamp(76px, 25vw, 118px);
+      line-height: .85;
+      color: #fff;
+      text-shadow: 0 10px 28px rgba(255, 77, 136, .48);
+      animation: nameGlow 3s ease-in-out infinite alternate;
+    }
+
+    h1 span {
+      display: inline-block;
+      animation: bounceLetter 2.4s ease-in-out infinite;
+    }
+
+    h1 span:nth-child(2) { animation-delay: .1s; }
+    h1 span:nth-child(3) { animation-delay: .2s; }
+    h1 span:nth-child(4) { animation-delay: .3s; }
+
+    @keyframes bounceLetter {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(-3deg); }
+    }
+
+    @keyframes nameGlow {
+      from { filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+      to { filter: drop-shadow(0 0 22px rgba(255,255,255,.55)); }
+    }
+
+    .compliment-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 9px 13px;
+      border-radius: 18px;
+      background: rgba(255, 77, 136, .2);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.92);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(255, 77, 136, .16);
+    }
+
+    .typewriter {
+      margin-top: 16px;
+      min-height: 104px;
+      max-width: 100%;
+      font-size: clamp(18px, 5.25vw, 25px);
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .typewriter span {
+      background: linear-gradient(90deg, #fff, #ffe2ef, #fff6ba, #fff);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shineText 4s linear infinite;
+    }
+
+    @keyframes shineText {
+      to { background-position: 220% center; }
+    }
+
+    .small-note {
+      margin-top: 12px;
+      max-width: 100%;
+      color: rgba(255,255,255,.84);
+      font-size: 14px;
+      line-height: 1.7;
+      animation: fadeUp 1.2s .7s both;
+    }
+
+    .button-row {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 900;
+      color: white;
+      background: linear-gradient(135deg, var(--hot), var(--lavender));
+      box-shadow: 0 12px 28px rgba(255, 77, 136, .35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    button:active {
+      transform: translateY(1px) scale(.98);
+    }
+
+    button:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 18px 38px rgba(255, 77, 136, .45);
+    }
+
+    .garden {
+      position: relative;
+      min-height: 300px;
+      flex: 1;
+      z-index: 2;
+      margin-top: 2px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(to top, rgba(31, 90, 59, .18), transparent 58%);
+    }
+
+    .moon {
+      position: absolute;
+      width: 62px;
+      height: 62px;
+      right: 18px;
+      top: 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff, #fff4be 45%, #ffd36e 70%);
+      box-shadow: 0 0 34px rgba(255, 239, 151, .75);
+      animation: floatSoft 5s ease-in-out infinite;
+    }
+
+    .moon::after {
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      right: -14px;
+      top: -4px;
+      border-radius: 50%;
+      background: rgba(83, 36, 102, .78);
+    }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 16px;
+      left: var(--x);
+      width: var(--s);
+      height: calc(var(--s) * 3.05);
+      transform-origin: bottom center;
+      animation: sway var(--t) ease-in-out infinite alternate;
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 6px;
+      height: 74%;
+      border-radius: 999px;
+      background: linear-gradient(#7ee8a6, #25724a);
+      transform: translateX(-50%);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 38%;
+      height: 16%;
+      bottom: 29%;
+      border-radius: 100% 0 100% 0;
+      background: linear-gradient(135deg, #9df7b6, #2d9a62);
+    }
+
+    .leaf.left { left: 13%; transform: rotate(-28deg); }
+    .leaf.right { right: 13%; transform: rotate(28deg) scaleX(-1); bottom: 42%; }
+
+    .head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 36%;
+      transform: translateX(-50%);
+      animation: bloom 1.25s cubic-bezier(.16, 1, .3, 1) both;
+      animation-delay: var(--d);
+    }
+
+    .petal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 38%;
+      height: 54%;
+      border-radius: 55% 55% 45% 45%;
+      background: radial-gradient(circle at 35% 25%, #fff, var(--c) 42%, #ef4c93 100%);
+      transform-origin: 50% 95%;
+      box-shadow: 0 8px 18px rgba(255, 77, 136, .28);
+    }
+
+    .petal:nth-child(1) { transform: translate(-50%, -92%) rotate(0deg); }
+    .petal:nth-child(2) { transform: translate(-50%, -92%) rotate(45deg); }
+    .petal:nth-child(3) { transform: translate(-50%, -92%) rotate(90deg); }
+    .petal:nth-child(4) { transform: translate(-50%, -92%) rotate(135deg); }
+    .petal:nth-child(5) { transform: translate(-50%, -92%) rotate(180deg); }
+    .petal:nth-child(6) { transform: translate(-50%, -92%) rotate(225deg); }
+    .petal:nth-child(7) { transform: translate(-50%, -92%) rotate(270deg); }
+    .petal:nth-child(8) { transform: translate(-50%, -92%) rotate(315deg); }
+
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 34%;
+      height: 34%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff7a0, #ffb82e 65%, #d98100);
+      box-shadow: 0 0 18px rgba(255, 226, 91, .9);
+    }
+
+    @keyframes bloom {
+      from { transform: translateX(-50%) scale(0) rotate(-90deg); opacity: 0; }
+      to { transform: translateX(-50%) scale(1) rotate(0); opacity: 1; }
+    }
+
+    @keyframes sway {
+      from { transform: rotate(-4deg); }
+      to { transform: rotate(5deg); }
+    }
+
+    .petals span {
+      width: 14px;
+      height: 20px;
+      border-radius: 70% 30% 70% 30%;
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,126,182,.85));
+      animation: fall linear infinite;
+      opacity: .8;
+    }
+
+    @keyframes fall {
+      0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+      10% { opacity: .85; }
+      100% { transform: translate3d(var(--drift), 112vh, 0) rotate(760deg); opacity: 0; }
+    }
+
+    .butterflies span {
+      width: 26px;
+      height: 22px;
+      animation: butterfly var(--bt) ease-in-out infinite;
+      filter: drop-shadow(0 8px 10px rgba(45, 27, 50, .2));
+    }
+
+    .butterflies span::before,
+    .butterflies span::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 21px;
+      top: 0;
+      background: radial-gradient(circle at 40% 35%, #fff, #ffc1df 38%, #a77bff 100%);
+      border-radius: 80% 20% 70% 30%;
+      animation: wing .28s ease-in-out infinite alternate;
+    }
+
+    .butterflies span::before { left: 1px; transform-origin: right center; }
+    .butterflies span::after { right: 1px; transform: scaleX(-1); transform-origin: left center; }
+
+    @keyframes wing {
+      from { transform: rotateY(10deg) rotate(6deg); }
+      to { transform: rotateY(62deg) rotate(-8deg); }
+    }
+
+    @keyframes butterfly {
+      0%, 100% { transform: translate(0, 0) rotate(-7deg); }
+      25% { transform: translate(24px, -18px) rotate(9deg); }
+      50% { transform: translate(54px, 5px) rotate(-4deg); }
+      75% { transform: translate(22px, 23px) rotate(11deg); }
+    }
+
+    .hidden-letter {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 18px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.19);
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 20px 50px rgba(20, 6, 38, .32);
+      transform: translateY(18px) scale(.94);
+      opacity: 0;
+      pointer-events: none;
+      transition: .45s ease;
+      z-index: 10;
+    }
+
+    .hidden-letter.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .hidden-letter strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Pacifico", cursive;
+      font-size: 27px;
+      color: var(--gold);
+    }
+
+    .hidden-letter p {
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: rgba(255,255,255,.91);
+    }
+
+    .heart-burst {
+      position: fixed;
+      font-size: 23px;
+      z-index: 20;
+      pointer-events: none;
+      animation: popHeart 1.1s ease-out forwards;
+    }
+
+    @keyframes popHeart {
+      from { transform: translate(-50%, -50%) scale(.2) rotate(0deg); opacity: 1; }
+      to { transform: translate(calc(-50% + var(--hx)), calc(-50% + var(--hy))) scale(1.5) rotate(30deg); opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 760px) {
+      body { overflow: hidden; }
+
+      .hero {
+        padding: 28px;
+      }
+
+      .card {
+        width: min(940px, 94vw);
+        min-height: 600px;
+        display: grid;
+        grid-template-columns: .95fr 1.05fr;
+        gap: 26px;
+        padding: 46px;
+        border-radius: 42px;
+      }
+
+      .eyebrow { font-size: 13px; padding: 10px 16px; }
+      .typewriter { min-height: auto; font-size: clamp(22px, 2.6vw, 28px); }
+      .small-note { font-size: 15px; }
+      .button-row { grid-template-columns: 1fr 1fr; margin-top: 28px; }
+      .garden { min-height: 500px; background: transparent; }
+      .moon { width: 88px; height: 88px; right: 20px; top: 18px; }
+      .moon::after { width: 72px; height: 72px; right: -17px; }
+      .hidden-letter { left: auto; right: 30px; bottom: 28px; width: min(335px, 80%); }
+      .flower { bottom: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="aurora"></div>
+    <div class="stars" id="stars"></div>
+    <div class="petals" id="petals"></div>
+    <div class="butterflies" id="butterflies"></div>
+  </div>
+
+  <main class="hero">
+    <section class="card">
+      <div class="message">
+        <div class="eyebrow">🌸 a little magic for you</div>
+        <h1 aria-label="Lina"><span>L</span><span>i</span><span>n</span><span>a</span></h1>
+        <div class="compliment-chip">✨ dangerously cute, secretly unstoppable</div>
+        <p class="typewriter"><span id="typed"></span></p>
+        <p class="small-note">
+          Even when the day is being dramatic, you still make the world look softer. So breathe, pretty girl — your smile has handled worse, and it still looks unfairly beautiful.
+        </p>
+        <div class="button-row">
+          <button id="bloomBtn">Bloom for Lina ✨</button>
+          <button id="letterBtn">A flirty little note 💌</button>
+        </div>
+      </div>
+
+      <div class="garden" id="garden">
+        <div class="moon"></div>
+        <div class="hidden-letter" id="letter">
+          <strong>Hey Lina,</strong>
+          <p>
+            I was going to send you flowers, but honestly they got jealous. You are sweet, gorgeous, and stronger than you think. Take your time, breathe a little, and remember: even the moon would stay up just to see you smile.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const typed = document.getElementById("typed");
+    const text = "Lina, you are the kind of pretty that distracts the stars — and the kind of strong that makes hard days nervous.";
+    let i = 0;
+
+    function type() {
+      if (i <= text.length) {
+        typed.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, i < 18 ? 75 : 38);
+      }
+    }
+    type();
+
+    const stars = document.getElementById("stars");
+    const starCount = window.innerWidth < 520 ? 45 : 75;
+    for (let s = 0; s < starCount; s++) {
+      const star = document.createElement("span");
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.animationDelay = Math.random() * 3 + "s";
+      star.style.animationDuration = 1.8 + Math.random() * 3 + "s";
+      stars.appendChild(star);
+    }
+
+    const petals = document.getElementById("petals");
+    const petalCount = window.innerWidth < 520 ? 24 : 40;
+    for (let p = 0; p < petalCount; p++) {
+      const petal = document.createElement("span");
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.setProperty("--drift", (Math.random() * 170 - 85) + "px");
+      petal.style.animationDuration = 8 + Math.random() * 9 + "s";
+      petal.style.animationDelay = Math.random() * 9 + "s";
+      petal.style.transform = `scale(${0.55 + Math.random() * 0.8})`;
+      petals.appendChild(petal);
+    }
+
+    const butterflies = document.getElementById("butterflies");
+    const butterflyCount = window.innerWidth < 520 ? 4 : 7;
+    for (let b = 0; b < butterflyCount; b++) {
+      const butterfly = document.createElement("span");
+      butterfly.style.left = 4 + Math.random() * 82 + "vw";
+      butterfly.style.top = 10 + Math.random() * 64 + "vh";
+      butterfly.style.setProperty("--bt", 5 + Math.random() * 5 + "s");
+      butterfly.style.animationDelay = Math.random() * 4 + "s";
+      butterflies.appendChild(butterfly);
+    }
+
+    const garden = document.getElementById("garden");
+    const colors = ["#ff9ac8", "#ff74ad", "#ffd1e4", "#c7a5ff", "#fff1a8"];
+
+    function createFlower(index, burst = false) {
+      const flower = document.createElement("div");
+      flower.className = "flower";
+      const mobile = window.innerWidth < 520;
+      const flowerSize = mobile ? 42 + Math.random() * 30 : 62 + Math.random() * 58;
+      flower.style.setProperty("--x", burst ? (6 + Math.random() * 76) + "%" : (index * (mobile ? 14 : 12) + Math.random() * 7) + "%");
+      flower.style.setProperty("--s", flowerSize + "px");
+      flower.style.setProperty("--t", (2.8 + Math.random() * 2.2) + "s");
+      flower.style.setProperty("--d", (index * .12) + "s");
+      flower.style.setProperty("--c", colors[Math.floor(Math.random() * colors.length)]);
+
+      flower.innerHTML = `
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+        <div class="head">
+          <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+          <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+          <div class="center"></div>
+        </div>
+      `;
+      garden.appendChild(flower);
+    }
+
+    const firstFlowers = window.innerWidth < 520 ? 7 : 8;
+    for (let f = 0; f < firstFlowers; f++) createFlower(f);
+
+    const bloomBtn = document.getElementById("bloomBtn");
+    bloomBtn.addEventListener("click", (event) => {
+      const amount = window.innerWidth < 520 ? 5 : 9;
+      for (let f = 0; f < amount; f++) createFlower(f, true);
+      heartBurst(event.clientX, event.clientY, window.innerWidth < 520 ? 14 : 20);
+    });
+
+    const letterBtn = document.getElementById("letterBtn");
+    const letter = document.getElementById("letter");
+    letterBtn.addEventListener("click", (event) => {
+      letter.classList.toggle("show");
+      heartBurst(event.clientX, event.clientY, window.innerWidth < 520 ? 10 : 14);
+    });
+
+    function heartBurst(x, y, count) {
+      const emojis = ["🌸", "💗", "✨", "🌷", "💫", "😘"];
+      for (let h = 0; h < count; h++) {
+        const heart = document.createElement("div");
+        heart.className = "heart-burst";
+        heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+        heart.style.setProperty("--hx", (Math.random() * 190 - 95) + "px");
+        heart.style.setProperty("--hy", (Math.random() * -155 - 38) + "px");
+        heart.style.animationDelay = Math.random() * .18 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1300);
+      }
+    }
+
+    document.addEventListener("pointermove", (e) => {
+      if (window.innerWidth < 520 && Math.random() < 0.94) return;
+      if (Math.random() > 0.88) {
+        const sparkle = document.createElement("div");
+        sparkle.className = "heart-burst";
+        sparkle.textContent = "✦";
+        sparkle.style.left = e.clientX + "px";
+        sparkle.style.top = e.clientY + "px";
+        sparkle.style.setProperty("--hx", (Math.random() * 58 - 29) + "px");
+        sparkle.style.setProperty("--hy", (Math.random() * -62 - 20) + "px");
+        sparkle.style.fontSize = 13 + Math.random() * 10 + "px";
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1000);
+      }
+    });
+  </script>
+</body>
+</html>
